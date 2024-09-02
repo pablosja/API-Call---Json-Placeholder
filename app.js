@@ -7,7 +7,7 @@ async function fetchUsers() {
         console.log('Users fetched:', users);
 
         const tableBody = document.querySelector('#usersTable tbody');
-        tableBody.innerHTML = ''; // Clear the table
+        tableBody.innerHTML = '';
 
         users.forEach(user => {
             const row = document.createElement('tr');
@@ -23,7 +23,6 @@ async function fetchUsers() {
     }
 }
 
-// Fetch and display user by ID
 async function fetchUserById() {
     const userId = document.querySelector('#userIdInput').value;
     if (!userId) {
@@ -49,8 +48,5 @@ async function fetchUserById() {
     }
 }
 
-// Fetch and display users when the page loads
 document.addEventListener('DOMContentLoaded', fetchUsers);
-
-// Attach fetchUserById to the button click
 document.querySelector('button').addEventListener('click', fetchUserById);
